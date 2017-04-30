@@ -25,5 +25,4 @@ six==1.10.0
 SQLAlchemy==1.1.9
 webargs==1.6.0
 Werkzeug==0.12.1
-xacro==1.11.2
 xgboost==0.6a2
