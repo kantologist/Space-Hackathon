@@ -320,6 +320,24 @@ footer {
 .grid-item { width: 200px; }
 .grid-item--width2 { width: 400px; }
 
+#myform {
+    text-align: left;
+    padding: 5px;
+    /*border: 1px dotted #ccc;*/
+    margin: 2%;
+}
+.qty {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
+
+a: hover {
+	text-decoration: none;
+}
+
 /***********************************
 ************************************
 Responsive media queries

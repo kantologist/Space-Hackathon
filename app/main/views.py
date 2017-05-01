@@ -13,6 +13,27 @@ import pandas as pd
 def index():
     return render_template('index.html')
 
+@main.route('/video')
+def video():
+    return render_template('video.html')
+
+@main.route('/where')
+def where():
+    return render_template('where.html')
+
+@main.route('/space')
+def space():
+    return render_template('space.html')
+
+@main.route('/earth')
+def earth():
+    return render_template('earth.html')
+
+@main.route('/appliance/<float:Power>')
+def appliance(Power):
+    Power = Power
+    return render_template('appliance.html', Power=Power)
+
 
 @main.route('/api/v1/predict')
 @use_kwargs(features)
