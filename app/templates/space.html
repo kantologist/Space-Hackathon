@@ -20,7 +20,8 @@
         Author URL: https://bootstrapmade.com
     ======================================================= -->
   </head>
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="myFunction()">
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" >
+  <div id="overlay"></div>
   <div class="header">
       <div class="bg-color">
         <header id="main-header">
@@ -32,15 +33,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">SimpleSolar</a>
+              <a class="navbar-brand" href="{{ url_for('main.index') }}">SimpleSolar</a>
             </div>
             <div class="collapse navbar-collapse" id="lauraMenu">
               <ul class="nav navbar-nav navbar-right navbar-border">
-                <li class="active"><a href="#main-header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#testimonial">Testimonial</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li class="active"><a href="{{ url_for('main.index') }}">Home</a></li>
               </ul>
             </div>
           </div>
@@ -55,7 +52,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="contact-sec text-center">
-            <h2>Hey <span class="deco">Space traveller  !</span> Welcome!</h2>
+            <h2>Hey <span class="deco">Space explorer  !</span> Read the following data from your space craft!</h2>
 
           </div>
         </div>
@@ -64,37 +61,37 @@
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
             </div>
-            <form action="" method="post" role="form" class="contactForm">
+            <form action="" role="form" class="contactForm">
                 <div class="form-group">
                   <label>Barometric Reading (Hg)</label>
-                    <input id="barometric" type="number" class="form-control" placeholder="in Hg" name="institution">
+                    <input id="barometric" type="number" step="0.01" class="form-control" placeholder="in Hg" name="institution">
                 </div>
                 <div class="form-group">
                   <label>Wind direction (in degrees)</label>
-                    <input id="wind_direction" type="number" class="form-control" placeholder="in degrees" name="institution">
+                    <input id="wind_direction" type="number" step="0.01" class="form-control" placeholder="in degrees" name="institution">
                 </div>
                 <div class="form-group">
                   <label>Wind speed (in miles/hr)</label>
-                    <input id="wind_speed" type="number" class="form-control" placeholder="in miles/hr" name="institution">
+                    <input id="wind_speed" type="number" step="0.01" class="form-control" placeholder="in miles/hr" name="institution">
                 </div>
                 <div class="form-group">
                   <label>Humidity (in %)</label>
-                    <input id="humidity" type="number" class="form-control" placeholder="in %" name="institution">
+                    <input id="humidity" type="number" step="0.01" class="form-control" placeholder="in %" name="institution">
                 </div>
                 <div class="form-group">
                   <label>Temperature (in Farenheit)</label>
-                    <input id="temp" type="number" class="form-control" placeholder="in Farenheit" name="institution">
+                    <input id="temp" type="number" step="0.01" class="form-control" placeholder="in Farenheit" name="institution">
                 </div>
                 <div>
                 <label>Solar Panel Area (in m(squared))</label>
-                    <input id="panel_area" type="number" class="form-control" placeholder="in Farenheit" name="institution">
+                    <input id="panel_area" type="number" step="0.01" class="form-control" placeholder="in m^2" name="institution">
                 </div>
                 <div class="form-group">
                   <label>Module Efficiency (in %)</label>
-                    <input id="eff" type="number" class="form-control" placeholder="in Farenheit" name="institution">
+                    <input id="eff" type="number" step="0.01" class="form-control" placeholder="in %" name="institution">
                 </div>
                 <div class="text-center" >
-                  <button type="submit" class="btn btn-primary btn-lg">Proceed</button>
+                  <button type="submit" onclick="getPower()"class="btn btn-primary btn-lg">Proceed</button>
                 </div>
             </form>
         </div>
@@ -159,13 +156,14 @@
     <script>
 
     function getPower() {
-      var pressure = $("#barometric").val()
-      var humidity = $("#humidity").val()
-      var wind_speed = $("wind_speed").val()
-      var temp = $("#temp").val()
-      var efficiency = $("#eff").val()
-      var size = $("#panel_area").val()
-      var wind_direction = $("#wind_direction").val()
+      $("body").append('<div id="overlay" style="background-color:grey;position:absolute;top:0;left:0;height:100%;width:100%;z-index:999></div>');
+      var pressure = parseFloat($("#barometric").val());
+      var humidity = parseFloat($("#humidity").val());
+      var wind_speed = parseFloat($("#wind_speed").val());
+      var temp = parseFloat($("#temp").val());
+      var efficiency = parseFloat($("#eff").val());
+      var size = parseFloat($("#panel_area").val());
+      var wind_direction = parseFloat($("#wind_direction").val());
       $.getJSON('http://localhost:5000/api/v1/predict?barometric='+pressure+'&humidity='+humidity+'&speed='+wind_speed+'&temp='+temp+'&eff='+efficiency+'&panel_area='+size+'&direction='+wind_direction)
    .done (function(power)
    {

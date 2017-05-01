@@ -30,6 +30,11 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="pull-right" >
+              <ul id="items" class="list-group">
+                <li class="list-group-item" >List of Appliances</li>
+              </ul>
+          </div>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -52,15 +57,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <!-- <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li> -->
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -69,14 +66,11 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container" style="margin-top:15%">
+    <div class="container" style="margin-top:25%">
 
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-               <!--  <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
-                </h1> -->
             </div>
         </div>
         <!-- /.row -->
@@ -89,7 +83,7 @@
                     <img class="img-responsive" src="/static/img/dryer.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Drilling Tool</a>
+                    <a rel="1" href="#">Drilling Tool</a>
                 </h3>
                 <p rel="1">Power: 1000W</p>
                 <span>
@@ -108,7 +102,7 @@
                     <img class="img-responsive" src="/static/img/laptop.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Laptop</a>
+                    <a rel="2" href="#">Laptop</a>
                 </h3>
                 <p rel="2">Power: 1000W</p>
                 <span>
@@ -127,7 +121,7 @@
                     <img class="img-responsive" src="/static/img/microwave.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Microwave</a>
+                    <a rel="3" href="#">Microwave</a>
                 </h3>
                 <p rel="3">Power: 1200W</p>
                 <span>
@@ -150,7 +144,7 @@
                     <img class="img-responsive" src="/static/img/blender.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Blender</a>
+                    <a rel="4" href="#">Blender</a>
                 </h3>
                 <p rel="4">Power: 600W</p>
                 <span>
@@ -168,7 +162,7 @@
                     <img class="img-responsive" src="/static/img/lg-ac.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Air Conditioner</a>
+                    <a rel="5" href="#">Air Conditioner</a>
                 </h3>
                 <p rel="5">Power: 1200W</p>
                 <span>
@@ -186,7 +180,7 @@
                     <img class="img-responsive" src="/static/img/iron.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Iron</a>
+                    <a rel="6" href="#">Iron</a>
                 </h3>
                 <p rel="6">Power: 1000W</p>
                 <span>
@@ -208,7 +202,7 @@
                     <img class="img-responsive" src="/static/img/timer.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Timer</a>
+                    <a rel="7" href="#">Timer</a>
                 </h3>
                 <p rel="7">Power: 120W</p>
                 <span>
@@ -226,7 +220,7 @@
                     <img class="img-responsive" src="/static/img/light-bulb.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Light Bulb</a>
+                    <a rel="8" href="#">Light Bulb</a>
                 </h3>
                 <p rel="8">Power: 100watts</p>
                 <span>
@@ -244,9 +238,9 @@
                     <img class="img-responsive" src="/static/img/hair-dryer.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Hair Dryer</a>
+                    <a rel="9" href="#">Hair Dryer</a>
                 </h3>
-                <p rel="9">Power</p>
+                <p rel="9">Power: 2000W</p>
                 <span>
                     <p>Quantity:
                         <form id='myform' method='POST' action='#'>
@@ -268,7 +262,7 @@
                     <img class="img-responsive" src="/static/img/microwave.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Microwave</a>
+                    <a href="#" rel="10">Microwave</a>
                 </h3>
                 <p rel="10">Power: 120W</p>
                 <span>
@@ -286,7 +280,7 @@
                     <img class="img-responsive" src="/static/img/toaster.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Oven</a>
+                    <a href="#" rel="11">Oven</a>
                 </h3>
                 <p rel="11">Power: 100watts</p>
                 <span>
@@ -304,9 +298,9 @@
                     <img class="img-responsive" src="/static/img/water-dispenser.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Water Dispenser</a>
+                    <a href="#" rel="12">Water Dispenser</a>
                 </h3>
-                <p rel="12">Power</p>
+                <p rel="12">Power: 80W</p>
                 <span>
                     <p>Quantity:
                         <form id='myform' method='POST' action='#'>
@@ -327,7 +321,7 @@
                     <img class="img-responsive" src="/static/img/ceiling-fan.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Ceiling Fan</a>
+                    <a href="#" rel="13">Ceiling Fan</a>
                 </h3>
                 <p rel="13">Power: 50W</p>
                 <span>
@@ -345,7 +339,7 @@
                     <img class="img-responsive" src="/static/img/submersible.png" alt="">
                 </a>
                 <h3>
-                    <a href="#">Submersible Water Pump</a>
+                    <a rel="14" href="#">Submersible Water Pump</a>
                 </h3>
                 <p rel="14">Power: 400watts</p>
                 <span>
@@ -362,8 +356,8 @@
                 <a href="#">
                     <img class="img-responsive" src="/static/img/sand.png" alt="">
                 </a>
-                <h3>
-                    <a href="#">9" Inch Disc Sander</a>
+                <h3 >
+                    <a rel="15" href="#">9" Inch Disc Sander</a>
                 </h3>
                 <p rel="15">Power: 1200W</p>
                 <span>
@@ -377,13 +371,7 @@
                 </span>
             </div>
         </div>
-        <!-- /.row -->
-
-
-
         <hr>
-
-
         <hr>
 
         <!-- Footer -->
@@ -410,6 +398,7 @@
     <script>
 
     Power = 0;
+    ids = [];
 
     function Increase(id){
         // Get the field name
@@ -423,7 +412,8 @@
             // Otherwise put a 0 there
             $('input[rel='+id+']').val(0);
         }
-        GlobalPower(id=id, inc=true)
+        GlobalPower(id=id, inc=true);
+        appendItems(id);
     };
 
     // This button will decrement the value till 0
@@ -434,11 +424,12 @@
         if (!isNaN(currentVal) && currentVal > 0) {
             // Decrement one
             $('input[rel='+id+']').val(currentVal - 1);
+            GlobalPower(id=id, inc=false);
+            removeItems(id);
         } else {
             // Otherwise put a 0 there
             $('input[rel='+id+']').val(0);
         }
-        GlobalPower(id=id, inc=false)
     };
 
     function GlobalPower(id, inc){
@@ -459,6 +450,34 @@
         $("#total_power").css('color', 'red');
       } else {
         $("#total_power").css('color', 'blue');
+      }
+    }
+
+    function appendItems(id){
+      if(ids.includes(id)){
+        var quant = parseInt($('input[rel='+id+']').val());
+        var item = $('a[rel='+id+']').text();
+        $('li[rel='+id+']').text(quant +"  "+ item);
+        console.log($('li[rel='+id+']').text());
+      } else {
+        var quant = parseInt($('input[rel='+id+']').val());
+        var item = $('a[rel='+id+']').text();
+        console.log(item);
+        $("#items").append("<li style='color:grey' rel="+id+">"+ quant +" "+ item +"<li>");
+        ids.push(id);
+      }
+    }
+
+    function removeItems(id){
+      if(ids.includes(id)){
+        var quant = parseInt($('input[rel='+id+']').val());
+        var item = $('a[rel='+id+']').text();
+        if (quant < 1){
+          $('li[rel='+id+']').remove();
+          ids.pop(id);
+        } else {
+          $('li[rel='+id+']').text(quant +"  "+ item);
+        }
       }
     }
     </script>

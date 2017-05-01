@@ -36,11 +36,7 @@
             </div>
             <div class="collapse navbar-collapse" id="lauraMenu">
               <ul class="nav navbar-nav navbar-right navbar-border">
-                <li class="active"><a href="#main-header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#testimonial">Testimonial</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li class="active"><a href="{{url_for('main.index')}}">Home</a></li>
               </ul>
             </div>
           </div>
@@ -62,15 +58,15 @@
       </div>
             <div>
               <div class="text-center">
-              <h1>Welcome again. Please where is your current location?</h1>
+              <h1>We would like to know your current location?</h1>
               </div
               <br>
               <div class="text-center" >
-                <a href="{{url_for('.earth')}}"><div class="btn btn-primary btn-lg">Earth </div></a>
+                <a href="{{url_for('.earth')}}"><div class="btn btn-primary btn-lg">Earth Dweller</div></a>
             </div>
             <br>
             <div class="text-center" >
-              <a href="{{ url_for('.space') }}"><div class="btn btn-primary btn-lg">Space</div></a>
+              <a href="{{ url_for('.space') }}"><div class="btn btn-primary btn-lg">Space Explorer</div></a>
           </div>
             </div>
             <!-- <form href="space.html" action="" method="post" role="form" class="contactForm">
